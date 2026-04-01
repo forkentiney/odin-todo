@@ -1,0 +1,146 @@
+:root {
+  --bg-base: hsl(230 61% 8%);
+  --bg-mantle: hsl(230 61% 12%);
+  --bg-crust: hsl(230 61% 16%);
+  --shadow: hsl(0 0% 10%);
+  --titles: hsl(0 0% 98%);
+  --text: hsl(0 0% 90%);
+  --text-muted: hsl(0 0% 85%);
+  --primary: hsl(348 40% 70%);
+  --secondary: hsl(348 40% 80%);
+  --danger: hsl(4 100% 77%);
+  --warning: hsl(20 98% 82%);
+  --success: hsl(101 50% 84%);
+}
+
+* {
+  margin: 0px;
+  padding: 0px; 
+  border: 0px;
+  font-size: 100%;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  box-sizing: border-box;
+  color: inherit;
+  background-color: inherit;
+}
+
+body {
+  background-color: var(--bg-base);
+  font-size: 18px;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+  color: var(--text);
+}
+
+h1, h2, h3, h4 {
+  color: var(--titles);
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+#content {
+  min-height: 100vh;
+}
+
+#sidebar {
+  z-index: 5;
+  flex-basis: 25vw;
+  background-color: var(--bg-mantle);
+  border-right: 2px solid var(--primary);
+}
+
+#project-list {
+}
+
+#project-details {
+  flex-grow: 1;
+  box-shadow: 0px 0px 8px var(--shadow) inset;
+}
+
+.icon {
+  height: 25px;
+  width: auto;
+  margin: 4px 1em;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  font-size: 14px;
+  text-align: center;
+  padding: 48px 24px;
+  border-top: 2px solid var(--primary);
+}
+
+#license,
+#credit,
+#socials {
+  grid-row: 1;
+}
+
+#license {
+  grid-column: 1;
+}
+
+#credit {
+  grid-column: 2;
+}
+
+#socials {
+  grid-column: 3;
+}
+
+@media screen and (max-width: 500px) {
+  footer {
+    grid-template-columns: 1fr;
+  }
+  #license,
+  #credit,
+  #socials {
+    grid-column: 1;
+  }
+  #credit {
+    grid-row: 1;
+  }
+  #socials {
+    grid-row: 2;
+  }
+  #license {
+    grid-row: 3;
+  }
+}
