@@ -1,24 +1,19 @@
-function category(title) {
+function category(title, details) {
   const category = title;
-  const description = ``;
+  const description = details;
   const todo = [];
   const done = [];
 
-  const newTodo = (name) => {
-    const item = name;
-    item.active = true;
-    item.priority = "Default";
-    todo.push(item);
+	const createItem = (name) => {
+		const item = {
+			title: name,
+			active: 1,
+			priority: "normal",
+		};
+		todo.push(item);
+	};
 
-    return { item };
-  }
-
-  const finishTodo = (item) => {
-    todo.find(item).status = "complete";
-  }
-
-  return { category, description, todo, done, newTodo };
+  return { category, description, todo, done, createItem };
 };
 
-const defaultCategory = category("default");
-defaultCategory.description = "For all your general needs";
+const defaultCategory = category("Default", "For all your general needs");
